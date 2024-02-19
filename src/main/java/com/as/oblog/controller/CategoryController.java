@@ -32,15 +32,18 @@ public class CategoryController {
     @GetMapping("/detail")
     public Result<Category> detail(@RequestParam Integer id){
         Category category = categoryService.findById(id);
-        if(category == null){
-            return Result.error("Category:暂时查询不到这个编号");
-        }
         return Result.success(category);
     }
 
     @PutMapping
     public Result update(@RequestBody @Validated(Category.Update.class) Category category){
         categoryService.update(category);
+        return Result.success();
+    }
+
+    @DeleteMapping
+    public Result delete(Integer id){
+        categoryService.deleteById(id);
         return Result.success();
     }
 

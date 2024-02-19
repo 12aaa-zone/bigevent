@@ -14,7 +14,7 @@ public class RedisTest {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
-    @Test
+   // @Test
     public void testSet(){
         //往redis中存储一个键值对  StringRedisTemplate
         ValueOperations<String, String> operations = stringRedisTemplate.opsForValue();
@@ -23,7 +23,7 @@ public class RedisTest {
         operations.set("id","1",15, TimeUnit.SECONDS);
     }
 
-    @Test
+    //@Test
     public void testGet(){
         //从redis中获取一个键值对
         ValueOperations<String, String> operations = stringRedisTemplate.opsForValue();

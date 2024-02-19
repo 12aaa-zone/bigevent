@@ -3,11 +3,13 @@ package com.as.oblog.pojo;
 
 
 import com.as.oblog.anno.State;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -37,6 +39,31 @@ public class Article {
     private Integer categoryId;//文章分类id
 
     private Integer createUser;//创建人ID
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;//创建时间
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;//更新时间
+
+    // 2024/01/20新增功能，可能出问题
+    private Integer viewCount; //观看数目 必填
+
+    private Integer likeCount;  //点赞数目 必填
+
+    private Boolean commentStatus; //是否启用评论 必填
+
+    private Boolean recommendStatus; //是否推荐  必填
+
+    private String password; //文章密码
+
+    private String tips; //留言
+
+    private Boolean viewStatus; //是否可见 必填
+
+    @NotNull(message = "文章标签ID不能为空")
+    private Integer labelId; //标签 必填
+
 }

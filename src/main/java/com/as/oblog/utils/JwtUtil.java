@@ -20,13 +20,7 @@ public class JwtUtil {
     //TODO  这里后期会用springsecurity重构
     private static String KEY_PATH = "src/main/resources/public-key.pem";
     private static String KEY= "-----BEGIN PUBLIC KEY-----\n" +
-            "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2h2K0wsC69wQFYHmF02P\n" +
-            "odd50T/afE7r/2n3FPUZOIemBv6S6stzAQeMjdCtIfK/WAiNSh6dsX3ixN3J8xeF\n" +
-            "yi7suYV/dRE+CW5r9qs7zg31hpSIt1KhO6H2lv/q6DGp8F5T//59pvaikgDpIaSK\n" +
-            "upnrNCmU5t9EhAaYOkctc44y2+iVsJX5UmujHkDDH7AgONFQuKb/WV7lhIerlCPb\n" +
-            "zplV0XIabEMDEFdXhJysBrpynA8tTvxGyt+gNEV2+ycPzbiyGpvCgBimzko1m8o9\n" +
-            "a23RVlsN5XrmT/JfTw94M/pakbaNqRXrALnszjgLlfbb3lsl5qKwVf3p5jWMD4ni\n" +
-            "xQIDAQAB\n" +
+            "\n" +
             "-----END PUBLIC KEY-----";
 
    /*
@@ -44,7 +38,7 @@ public class JwtUtil {
     public static String genToken(Map<String, Object> claims) {
         return JWT.create()
                 .withClaim("claims", claims)
-                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
+                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 7))
                 .sign(Algorithm.HMAC256(KEY));
     }
 

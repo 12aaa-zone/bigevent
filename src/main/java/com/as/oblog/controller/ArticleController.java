@@ -22,7 +22,10 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
+
     // 测试接口
+    /*
     @GetMapping("/list")
     public Result<String> list(@RequestHeader(name = "Authorization") String token,
                                HttpServletResponse response){
@@ -33,7 +36,7 @@ public class ArticleController {
             return Result.error("未登录，或者验证失败");
         }
         return Result.success("测试接口，返回一些数据....");
-    }
+    }*/
 
 
 

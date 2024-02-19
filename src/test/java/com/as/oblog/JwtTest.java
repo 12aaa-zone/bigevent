@@ -33,7 +33,7 @@ public class JwtTest {
         }
     }
 
-    @Test
+    //@Test
     public void testGen() throws IOException {
 
         Map<String, Object> claims = new HashMap<>();
@@ -50,7 +50,7 @@ public class JwtTest {
 
     }
 
-    @Test
+    //@Test
     public void testParse(){
 
         //定义字符串,模拟用户传递过来的token

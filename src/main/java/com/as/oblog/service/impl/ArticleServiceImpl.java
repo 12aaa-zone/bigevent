@@ -3,6 +3,7 @@ package com.as.oblog.service.impl;
 import com.as.oblog.mapper.ArticleMapper;
 import com.as.oblog.pojo.Article;
 import com.as.oblog.pojo.PageBean;
+import com.as.oblog.pojo.Result;
 import com.as.oblog.service.ArticleService;
 import com.as.oblog.utils.ThreadLocalUtil;
 import com.github.pagehelper.Page;
@@ -24,7 +25,7 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleMapper articleMapper;
 
     @Override
-    public void add(Article article) {
+    public Result add(Article article) {
         //补充属性值
         article.setCreateTime(LocalDateTime.now());
         article.setUpdateTime(LocalDateTime.now());
@@ -34,6 +35,7 @@ public class ArticleServiceImpl implements ArticleService {
         article.setCreateUser(userId);
 
         articleMapper.add(article);
+        return Result.success();
     }
 
     @Override

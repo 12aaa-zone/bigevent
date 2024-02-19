@@ -13,8 +13,8 @@
 
     <groupId>com.as</groupId>
     <artifactId>OBlog</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <version>0.0.3-Alpha</version>
+    <packaging>jar</packaging>
 
     <name>OBlog</name>
     <description>OBlog</description>

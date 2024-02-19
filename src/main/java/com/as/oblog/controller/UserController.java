@@ -99,7 +99,7 @@ public class UserController {
 
 
     @GetMapping("/userInfo")
-    public Result<User> userInfo(@RequestHeader(name = "Authorization") String token){
+    public Result<User> userInfo(/*@RequestHeader(name = "Authorization") String token*/){
         Map<String, Object> claims = ThreadLocalUtil.get();
         String username = (String) claims.get("username");
         User user = userService.findByUserName(username);
