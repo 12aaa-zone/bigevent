@@ -4,7 +4,7 @@ spring:
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://localhost:3306/oblog
         username: root
-        password: 12aaaaaa
+        password: xxxxxx
     servlet:
       multipart:
           max-file-size: 10MB  # 设置单个文件的最大大小
